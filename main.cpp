@@ -4,12 +4,10 @@
 
 using namespace std;
 
-// Функция, для которой мы будем искать минимум
 double f(vector<double> x) {
     return 2 * x[0] * x[0] + 3 * x[1] * x[1] - 4 * x[0] * x[1] + 5 * x[0] - 6 * x[1] + 7;
 }
 
-// Градиент функции
 vector<double> gradient_f(vector<double> x) {
     vector<double> grad;
     grad.push_back(4 * x[0] - 4 * x[1] + 5);
@@ -17,8 +15,6 @@ vector<double> gradient_f(vector<double> x) {
     return grad;
 }
 
-
-// Градиентный спуск
 vector<vector<double>> gradient_descent(vector<double> x_0, double alpha, int num_iterations) {
     vector<double> x = x_0;
     vector<vector<double>> massive_x(num_iterations, std::vector<double>(2));
@@ -33,9 +29,9 @@ vector<vector<double>> gradient_descent(vector<double> x_0, double alpha, int nu
 }
 
 int main() {
-    vector<double> x0 = {8, 8}; // начальное приближение
-    double alpha = 0.15; // скорость обучения
-    int num_iterations = 100; // количество итераций
+    vector<double> x0 = {8, 8}; // initial point
+    double alpha = 0.15; // velocity train
+    int num_iterations = 100; // numbers iteration
     vector<vector<double>> result = gradient_descent(x0, alpha, num_iterations);
 
     // Запись результатов в файл
