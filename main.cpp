@@ -34,7 +34,6 @@ int main() {
     int num_iterations = 100; // numbers iteration
     vector<vector<double>> result = gradient_descent(x0, alpha, num_iterations);
 
-    // Запись результатов в файл
     ofstream fout("result.txt");
     if (fout.is_open()) {
         for (int j = 0; j < num_iterations; j++) {
