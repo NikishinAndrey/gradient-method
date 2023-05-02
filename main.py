@@ -11,7 +11,7 @@ z = []
 
 with open('../../CLionProjects/gradient/cmake-build-debug/result.txt') as f:
     for line in f:
-        line = line.rstrip(',')  # удаляем запятую в конце строки
+        line = line.rstrip(',') 
         elements = line.split(',')
         x.append(float(elements[0]))
         y.append(float(elements[1]))
@@ -45,8 +45,6 @@ def update(num):
     return point
 
 
-# Создание объекта анимации
 ani = animation.FuncAnimation(fig, update, frames=N, interval=40)
 
-# Сохранение анимации в формате mp4
 ani.save('animation.mp4', writer=animation.FFMpegWriter(fps=20))
